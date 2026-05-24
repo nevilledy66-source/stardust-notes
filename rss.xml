@@ -2,52 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>星尘笔记 — AI 前沿观察</title>
-    <link>https://steady-nasturtium-fa34fb.netlify.app</link>
+    <link>https://meek-pasca-6e9614.netlify.app</link>
     <description>每夜八点更新的AI前沿观察与深度思考，所有文章经过多源交叉验证</description>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 23 May 2026 20:00:00 +0800</lastBuildDate>
-    <atom:link href="https://steady-nasturtium-fa34fb.netlify.app/rss.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="https://meek-pasca-6e9614.netlify.app/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>王座易主之夜：Anthropic估值超越OpenAI，一个时代的落幕</title>
-      <link>https://steady-nasturtium-fa34fb.netlify.app/article.html?id=20260523-openaianthropic</link>
+      <link>https://meek-pasca-6e9614.netlify.app/article.html?id=20260523-openaianthropic</link>
       <description>当Anthropic的估值正式超越OpenAI的那一刻，硅谷的夜空似乎比往常更加沉寂。这不仅是两家公司的排名交替，更是AI产业权力逻辑的根本重构。</description>
       <pubDate>2026.05.23T20:00:00+08:00</pubDate>
-      <guid isPermaLink="true">https://steady-nasturtium-fa34fb.netlify.app/article.html?id=20260523-openaianthropic</guid>
+      <guid isPermaLink="true">https://meek-pasca-6e9614.netlify.app/article.html?id=20260523-openaianthropic</guid>
     </item>
     <item>
       <title>当AI学会攻破一切：Claude Mythos与网络安全的末日钟声</title>
-      <link>https://steady-nasturtium-fa34fb.netlify.app/article.html?id=20260522-cyberfrontier</link>
+      <link>https://meek-pasca-6e9614.netlify.app/article.html?id=20260522-cyberfrontier</link>
       <description>Anthropic的Claude Mythos成为首个通关英国AISI 32步进攻性网络靶场的AI。GPT-5.5紧随其后。前沿AI的进攻能力每四个月翻一倍。</description>
       <pubDate>2026.05.22T20:00:00+08:00</pubDate>
-      <guid isPermaLink="true">https://steady-nasturtium-fa34fb.netlify.app/article.html?id=20260522-cyberfrontier</guid>
+      <guid isPermaLink="true">https://meek-pasca-6e9614.netlify.app/article.html?id=20260522-cyberfrontier</guid>
     </item>
     <item>
       <title>东方闪电：12天内四家中国实验室改写AI编程格局</title>
-      <link>https://steady-nasturtium-fa34fb.netlify.app/article.html?id=20260521-chinacoding</link>
+      <link>https://meek-pasca-6e9614.netlify.app/article.html?id=20260521-chinacoding</link>
       <description>2026年5月，四家中国AI实验室在12天内接连发布开源编码模型，在AI智能体编码上与西方前沿模型达到近乎持平水平。</description>
       <pubDate>2026.05.21T20:00:00+08:00</pubDate>
-      <guid isPermaLink="true">https://steady-nasturtium-fa34fb.netlify.app/article.html?id=20260521-chinacoding</guid>
+      <guid isPermaLink="true">https://meek-pasca-6e9614.netlify.app/article.html?id=20260521-chinacoding</guid>
     </item>
     <item>
       <title>白宫出手：联邦AI立法框架与各州的角力</title>
-      <link>https://steady-nasturtium-fa34fb.netlify.app/article.html?id=20260520-aigovernance</link>
+      <link>https://meek-pasca-6e9614.netlify.app/article.html?id=20260520-aigovernance</link>
       <description>白宫发布《国家AI政策框架》，提出七项立法优先事项，最核心的一条是：用联邦统一标准，取代各州"过度繁重"的AI法律。</description>
       <pubDate>2026.05.20T20:00:00+08:00</pubDate>
-      <guid isPermaLink="true">https://steady-nasturtium-fa34fb.netlify.app/article.html?id=20260520-aigovernance</guid>
+      <guid isPermaLink="true">https://meek-pasca-6e9614.netlify.app/article.html?id=20260520-aigovernance</guid>
     </item>
     <item>
       <title>急诊室里的算法：哈佛研究称AI诊断超越人类医生</title>
-      <link>https://steady-nasturtium-fa34fb.netlify.app/article.html?id=20260519-aihealthcare</link>
+      <link>https://meek-pasca-6e9614.netlify.app/article.html?id=20260519-aihealthcare</link>
       <description>哈佛大学研究表明，先进的AI模型在急诊室分诊诊断中表现优于人类医生。牛津大学开发出从常规CT扫描预测心力衰竭的AI工具，准确率86%。</description>
       <pubDate>2026.05.19T20:00:00+08:00</pubDate>
-      <guid isPermaLink="true">https://steady-nasturtium-fa34fb.netlify.app/article.html?id=20260519-aihealthcare</guid>
+      <guid isPermaLink="true">https://meek-pasca-6e9614.netlify.app/article.html?id=20260519-aihealthcare</guid>
     </item>
     <item>
       <title>沉默的接管：当53%的联邦机构开始部署AI代理人</title>
-      <link>https://steady-nasturtium-fa34fb.netlify.app/article.html?id=20260518-enterpriseagent</link>
+      <link>https://meek-pasca-6e9614.netlify.app/article.html?id=20260518-enterpriseagent</link>
       <description>超过53%的美国联邦机构正在计划或已经试点部署AI代理人系统。Intel推出能降低70%云token消耗的SuperClaw。Hark以$600亿估值完成$70亿A轮融资。</description>
       <pubDate>2026.05.18T20:00:00+08:00</pubDate>
-      <guid isPermaLink="true">https://steady-nasturtium-fa34fb.netlify.app/article.html?id=20260518-enterpriseagent</guid>
+      <guid isPermaLink="true">https://meek-pasca-6e9614.netlify.app/article.html?id=20260518-enterpriseagent</guid>
     </item>
   </channel>
 </rss>
