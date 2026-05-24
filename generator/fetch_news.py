@@ -434,7 +434,7 @@ def main() -> None:
 
 def generate_rss(articles: list[dict]) -> None:
     """Generate RSS 2.0 XML feed."""
-    site_url = "https://stardust-notes.vercel.app"
+    site_url = "https://steady-nasturtium-fa34fb.netlify.app"
 
     items_xml = ""
     for a in articles[:20]:
