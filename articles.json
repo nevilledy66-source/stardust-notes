@@ -1,0 +1,90 @@
+{
+  "articles": [
+    {
+      "id": "20260523-openaianthropic",
+      "title": "王座易主之夜：Anthropic估值超越OpenAI，一个时代的落幕",
+      "date": "2026.05.23",
+      "summary": "当Anthropic的估值正式超越OpenAI的那一刻，硅谷的夜空似乎比往常更加沉寂。这不仅是两家公司的排名交替，更是AI产业权力逻辑的根本重构——从谁拥有更多用户，变成了谁嵌入得更深。",
+      "content": "<p>深夜的硅谷，总有一些数字在静悄悄地改写着历史。</p><p>就在这个五月，一个几乎被所有人预见却又无人敢断言的转折发生了——Anthropic的最新一轮融资将其估值推至9000亿美元以上，正式超越OpenAI的8520亿美元。这是自ChatGPT引爆AI浪潮以来，\"全球最有价值AI创业公司\"的头衔首次易主。</p><p>但数字只是表象。真正值得凝视的，是这组数字背后的权力逻辑切换。</p><h2>从\"用户数\"到\"嵌入深度\"</h2><p>ChatGPT拥有9.05亿周活用户——这依然是一个令人生畏的数字。然而Anthropic的企业市场份额已从10%跃升至65%以上。当OpenAI还在用\"每周有多少人跟ChatGPT聊天\"来衡量自己的影响力时，Anthropic已经潜入企业的代码库、工作流和开发者工具链，成为一种不可拆卸的基础设施。</p><p>用军事术语来说：OpenAI赢得了一场又一场的\"战役\"，而Anthropic正在赢得\"战争\"。</p><p>最讽刺的是，几乎与此同时，苹果结束了ChatGPT在iOS中的独家集成，转而与Google签下每年约10亿美元的协议，用Gemini驱动下一代Siri。OpenAI正在准备起诉苹果违约——这一幕恰好揭示了\"用户数\"叙事的脆弱性：当平台转移时，用户并不属于你。</p><blockquote>如果失去了苹果的20亿台设备，ChatGPT的周活用户还能剩下多少？这是OpenAI董事会里没有人愿意公开回答的问题。</blockquote><h2>代码中的权力</h2><p>Anthropic的真正武器不是Claude模型的参数规模，而是Claude Code——一个正在重新定义\"编程\"这一行为的工具。MIT Technology Review在5月21日的报道中写道：\"Anthropic的Code with Claude展示了编程的未来——无论你喜欢与否。\"</p><p>与此同时，OpenAI也在加速布局。5月的一条被广泛讨论的新闻是：OpenAI内部讨论了将机器人部门和硬件部门独立分拆的可能性。这暗示着，OpenAI自己也意识到，大而全的\"AI帝国\"叙事可能不如聚焦核心来得有效。</p><h2>战争与伦理</h2><p>然而Anthropic的选择并非没有代价。美国国防部长将Anthropic定性为\"供应链风险\"，因为它拒绝删除禁止大规模监控和全自主武器的道德红线。Anthropic正在联邦法院对此提出挑战。</p><p>八家科技巨头——Microsoft、Google、OpenAI、NVIDIA——加入了五角大楼的AI合作伙伴关系，而Anthropic被明确排除在外。五角大楼表示\"永远不会再依赖单一AI供应商\"。</p><p>这是一道真正的选择题：坚守伦理底线的代价，可能是被排除在每年数千亿美元的国防AI市场之外。</p><h2>关键事实速览</h2><ul><li>Anthropic最新估值$9000亿+，超越OpenAI的$8520亿，成为全球最有价值的AI创业公司</li><li>Anthropic企业市场份额从10%飙升至65%+，Q2预计首次实现盈利</li><li>苹果结束ChatGPT独家集成，转投Google Gemini（约$10亿/年），OpenAI准备起诉</li><li>五角大楼联合8家科技巨头建立AI联盟，Anthropic因伦理红线被排除</li><li>前OpenAI联合创始人Andrej Karpathy加入Anthropic执掌预训练团队</li></ul>",
+      "tags": ["OpenAI", "Anthropic", "行业格局"],
+      "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
+      "sources": [
+        {"name": "Moneycontrol", "url": "https://www.moneycontrol.com/news/business/companies/anthropic-set-to-surpass-openai-with-potential-900-billion-valuation-13928379.html", "title": "Anthropic set to surpass OpenAI with potential $900 billion valuation"},
+        {"name": "MIT Technology Review", "url": "https://www.technologyreview.com/2026/05/21/1137735/anthropics-code-with-claude-showed-off-codings-future-whether-you-like-it-or-not/", "title": "Anthropic's Code with Claude showed off coding's future"},
+        {"name": "Digit", "url": "https://www.digit.in/features/general/openai-made-more-money-than-anthropic-but-chatgpt-growth-has-stalled.html", "title": "OpenAI made more money than Anthropic, but ChatGPT growth has stalled"},
+        {"name": "Business Insider", "url": "https://markets.businessinsider.com/news/stocks/ai-daily-openai-discussed-spinning-out-robotics-hardware-divisions-1036109592", "title": "OpenAI discussed spinning out robotics, hardware divisions"}
+      ]
+    },
+    {
+      "id": "20260522-cyberfrontier",
+      "title": "当AI学会攻破一切：Claude Mythos与网络安全的末日钟声",
+      "date": "2026.05.22",
+      "summary": "Anthropic的Claude Mythos成为首个通关英国AISI 32步进攻性网络靶场的AI。GPT-5.5紧随其后。前沿AI的进攻能力每四个月翻一倍——我们正在跨过一条看不见的红线。",
+      "content": "<p>有一种技术进步，发生的时候悄无声息，但当你回头看，会发现世界的疆域已经被永久地改变了。</p><p>5月，Anthropic的Claude Mythos Preview完成了一件此前任何AI系统都无法做到的事情——它通关了英国AISI（人工智能安全研究所）设计的32步进攻性网络靶场\"The Last Ones\"。在10次尝试中，3次完成了从初始访问到完整域控制的全部步骤。完整域控制。</p><p>几天后，GPT-5.5在同样的测试中取得2/10次端到端成功，专家级任务完成率达到71.4%。</p><h2>临界点</h2><p>这不是两个孤立的测试数据。AISI现在估计，前沿AI的进攻性网络能力每四个月翻一倍。如果你对这个速度没有概念，请回忆一下摩尔定律——芯片性能每18-24个月翻一倍，被公认为现代科技史上最迅猛的增长曲线之一。而AI网络攻击能力的增长速度，是摩尔定律的四到五倍。</p><p>换句话说：规则引擎和静态签名检测的网络安全时代，正在以肉眼可见的速度走向终结。</p><blockquote>当攻击者能够以每四个月翻倍的速度进化，而防御者依然依赖\"已知威胁特征库\"来识别攻击——这不是一场竞赛，这是一场被预先决定的结局。</blockquote><h2>白宫的反应</h2><p>Claude Mythos的表现直接触发了白宫层面的讨论。一份流传出来的政策备忘录显示，美国政府正在考虑建立类似FDA药品审批的前沿模型安全审查机制——在模型公开发布之前，必须通过特定的安全评估。</p><p>这本身就是一个悖论：那些最容易通过安全审查的模型，往往也最容易在攻击性测试中表现不佳。而那些能力最强的模型——恰恰是最危险的。</p><h2>CISA的紧急行动</h2><p>美国网络安全与基础设施安全局（CISA）紧急发布了\"谨慎采用自主AI服务\"指南——这是美国联邦政府第一份专门针对自主AI代理人网络安全风险的官方文件。指南中提到的一个核心观点是：\"当AI系统能够自主规划、执行和调整攻击策略时，传统的边界防御模型将无法应对。\"</p><p>这句话翻译成通俗语言就是：防火墙的时代，结束了。</p><h2>Coinbase和Cloudflare的\"先见之明\"</h2><p>也许并非巧合。5月，Coinbase宣布裁员14%，Cloudflare裁撤1100+个岗位。两家公司给出的理由是——\"为AI代理人时代进行重组\"。当科技巨头开始用\"AI代理人\"这个词来解释裁员决策时，你就知道某些事情已经不可逆转了。</p><h2>关键事实速览</h2><ul><li>Claude Mythos Preview成为首个通关AISI 32步网络攻击靶场的AI模型（3/10次完全成功）</li><li>GPT-5.5紧随其后（2/10次成功，71.4%专家任务完成率）</li><li>AISI估计前沿AI网络进攻能力每4个月翻一倍</li><li>白宫考虑建立类似FDA的前沿模型安全审批机制</li><li>CISA发布首份自主AI代理人网络安全指南</li><li>Coinbase裁员14%、Cloudflare裁员1100+，明确归因于AI代理人时代重组</li></ul>",
+      "tags": ["AI安全", "Claude", "GPT", "网络安全"],
+      "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80",
+      "sources": [
+        {"name": "State of AI May 2026", "url": "https://press.airstreet.com/p/state-of-ai-may-2026", "title": "State of AI Report — Frontier Cyber Offense"},
+        {"name": "TechTarget", "url": "https://www.techtarget.com/searchcio/feature/Weekly-News-Roundup-OpenAI-launch-AI-lawsuits-and-frameworks-and-Pentagon-AI-alliances", "title": "OpenAI launch, AI lawsuits and frameworks and Pentagon AI alliances"},
+        {"name": "The Verge AI Archive", "url": "https://www.theverge.com/archives/ai-artificial-intelligence/2026/5/1", "title": "AI Artificial Intelligence Archive May 2026"}
+      ]
+    },
+    {
+      "id": "20260521-chinacoding",
+      "title": "东方闪电：12天内四家中国实验室改写AI编程格局",
+      "date": "2026.05.21",
+      "summary": "美国以为领先5-10年。然后在12天之内，四家中国AI实验室发布了与西方前沿模型几乎持平的编程智能体——而运行成本只有一小部分。这场追赶，比任何人预测的都快。",
+      "content": "<p>2026年5月，四家中国AI实验室——Z.ai、MiniMax、Moonshot（月之暗面）和DeepSeek——在短短12天内接连发布了开源编码模型。</p><p>12天。四家实验室。一款又一款模型。</p><p>当最后一个模型发布时，一个此前几乎不可想象的事实变得清晰：在AI智能体编码这个被视为\"编程的未来\"的领域，中国开源模型已经与西方前沿模型达到近乎持平的水平——而推理成本仅为后者的一小部分。</p><h2>被低估的速度</h2><p>直到2025年底，硅谷的主流叙事仍然是：中国AI在模型能力上落后美国18-24个月，在芯片方面更是有\"无法逾越\"的鸿沟。这个叙事有两个假设前提：(1) 出口管制可以有效限制中国获取关键硬件；(2) 模型能力的追赶是线性的。</p><p>两个假设可能都错了。</p><p>中国实验室找到了一条不同的路径：不追求最大的模型，而追求最高效的模型。通过模型蒸馏、混合专家架构（MoE）和精细的强化学习，它们用远少于GPT-5的训练算力，在特定任务上实现了接近甚至匹敌的性能。</p><p>这就像F1赛车vs轻型跑车：在直道上F1遥遥领先，但在弯道多的山路上，轻型跑车可能更快到达终点。</p><h2>编程：战略要塞</h2><p>为什么是编程？因为编程是AI经济中最重要的单一能力。</p><p>一个能够自主编写生产级代码的AI，可以构建其他AI；可以自动化软件开发流程；可以降低整个数字基础设施的成本。编程能力是AI经济的\"母能力\"——掌握了它，就掌握了下一层能力的钥匙。</p><p>MIT Technology Review写道：\"Anthropic的Code with Claude展示了编程的未来——无论你喜欢与否。\"而中国实验室的回应是：\"这个未来，我们也可以参与建造。\"</p><h2>开源的影响</h2><p>更值得深思的是，这些中国模型是开源的。任何国家的任何开发者都可以下载、修改和部署它们。这与OpenAI和Anthropic的封闭API模式形成了鲜明对比。</p><p>开源AI编程模型意味着：全球南方国家的开发者将不再需要为GPT-5的API支付高昂费用。他们可以使用近乎同等能力的模型，在自己的服务器上运行，成本可能只有百分之一。</p><p>这不仅仅是技术竞争——这是技术民主化。</p><h2>关键事实速览</h2><ul><li>2026年5月，Z.ai、MiniMax、Moonshot、DeepSeek在12天内接连发布开源编码模型</li><li>在AI智能体编码任务上与西方前沿模型达到近乎持平水平</li><li>中国模型通过蒸馏、MoE架构和强化学习实现高效训练，推理成本大幅低于西方同类</li><li>开源策略使得全球开发者可免费使用，可能重塑AI编程工具的市场格局</li><li>编程能力被视为\"AI经济的母能力\"——掌握即掌握下一层能力的钥匙</li></ul>",
+      "tags": ["开源模型", "AI编程", "DeepSeek"],
+      "image": "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800&q=80",
+      "sources": [
+        {"name": "State of AI May 2026", "url": "https://press.airstreet.com/p/state-of-ai-may-2026", "title": "Four Chinese labs release open-weights coding models"},
+        {"name": "MIT Technology Review", "url": "https://www.technologyreview.com/2026/05/21/1137735/anthropics-code-with-claude-showed-off-codings-future-whether-you-like-it-or-not/", "title": "Code with Claude showed off coding's future"},
+        {"name": "Edge AI Daily", "url": "https://www.tmtpost.com/7999694.html", "title": "AI早报 5月23日"}
+      ]
+    },
+    {
+      "id": "20260520-aigovernance",
+      "title": "白宫出手：联邦AI立法框架与各州的角力",
+      "date": "2026.05.20",
+      "summary": "3月20日，白宫发布《国家AI政策框架》，提出七项立法优先事项，其中最核心的一条是：用联邦统一标准，取代各州\"过度繁重\"的AI法律。而科罗拉多州的AI法案即将在6月30日生效——这场联邦与州的权力之争，将定义美国AI监管的未来形态。",
+      "content": "<p>在美国法律体系最深的基因里，刻着一条永恒的张力线：联邦vs各州。这条线如今延伸到了人工智能的疆域。</p><p>2026年3月20日，白宫发布了《国家人工智能政策框架》（National Policy Framework for Artificial Intelligence）——一份为国会准备的立法蓝图。这份文件的核心信息可以用一句话概括：\"我们不需要一个新的联邦AI监管机构。我们需要统一的国家标准，并且——最重要的是——杜绝各州各自为政。\"</p><h2>七个支柱</h2><p>这份框架围绕七项优先事项构建：儿童安全与家长控制工具、社区与能源保护（承诺\"居民电价不因AI数据中心上涨\"）、知识产权（将\"AI训练是否侵犯版权\"交由法院裁定，而行政当局的立场是——不侵犯）、防止审查与保护言论自由、创新与AI美国主导权（监管沙盒、联邦数据AI化）、劳动力与教育，以及——整座大厦的基石——联邦对各州AI法律的优先权。</p><p>最后一项，是整个博弈中最具爆炸性的。</p><h2>联邦优先权：核心战场</h2><p>白宫的核心论点是：如果50个州各自制定AI监管规则，AI公司将面临一个无法合规的碎片化法律迷宫。这将在事实上扼杀创新。因此，联邦法律应当\"优先于\"（preempt）那些\"过度繁重的\"州级AI法律。</p><p>但\"过度繁重\"由谁来定义？</p><p>科罗拉多州的AI法案（Colorado AI Act）定于2026年6月30日生效——这是美国最全面的州级AI监管法律之一。白宫将其明确列为\"有问题的州级监管\"案例。科罗拉多的立法者们则反驳：联邦层面的优先权是在利用\"效率\"之名，行\"监管松绑\"之实。</p><p>更深的裂痕在于党派。共和党参议员Marsha Blackburn提出了291页的TRUMP AMERICA AI法案（一份比白宫框架更细化的立法草案），而民主党众议员Don Beyer等人则提出了GUARDRAILS法案——明确反对广泛的联邦优先权，试图阻止白宫覆盖各州AI法律的努力。</p><h2>欧盟：另一条路径</h2><p>在大西洋彼岸，欧盟选择了不同的方向。5月7日，欧洲议会与理事会就《数字综合法案》（Digital Omnibus on AI）达成临时政治协议。核心举措是：延迟AI法案的多项合规截止日期（高风险AI系统的合规要求推迟了约16个月），但新增了\"nudifier\"应用（未经同意生成私密图像）的全面禁令。</p><p>欧盟的路径是\"先立法、后松绑\"，而美国的路径是\"先反对立法、再谈标准\"。两种哲学，两种后果。</p><h2>关键事实速览</h2><ul><li>白宫于2026年3月20日发布《国家AI政策框架》，提出七项立法优先事项</li><li>核心争议点：联邦法律是否应优先于各州AI法律（联邦优先权）</li><li>科罗拉多州AI法案将于6月30日生效，被白宫视为\"问题案例\"</li><li>共和党提出291页的TRUMP AMERICA AI法案，民主党以GUARDRAILS法案反对</li><li>欧盟5月7日达成数字综合协议：推迟AI合规期限但新增nudifier禁令</li></ul>",
+      "tags": ["AI监管", "AI安全", "政策"],
+      "image": "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=800&q=80",
+      "sources": [
+        {"name": "DLA Piper", "url": "https://www.dlapiper.com/en/insights/publications/2026/03/white-house-releases-the-national-policy-framework-for-ai-key-points", "title": "White House releases the National Policy Framework for AI"},
+        {"name": "Freshfields", "url": "https://www.freshfields.com/en/our-thinking/blogs/a-fresh-take/white-house-publishes-ai-legislative-framework-to-preempt-state-ai-regulation-102mnul", "title": "White House Publishes AI Legislative Framework to Preempt State AI Regulation"},
+        {"name": "Taylor Wessing", "url": "https://www.taylorwessing.com/zh-hant/insights-and-events/insights/2026/05/the-eu-digital-omnibus-on-ai-what-the-political-deal-means", "title": "The EU Digital Omnibus on AI – What the political deal means"},
+        {"name": "Holland & Knight", "url": "https://www.hklaw.com/en/insights/publications/2026/03/white-house-releases-a-national-policy-framework-for-artificial", "title": "White House Releases a National Policy Framework for AI"}
+      ]
+    },
+    {
+      "id": "20260519-aihealthcare",
+      "title": "急诊室里的算法：哈佛研究称AI诊断超越人类医生",
+      "date": "2026.05.19",
+      "summary": "哈佛大学的一项研究表明，先进的AI模型在急诊室分诊诊断中表现优于人类医生。与此同时，英国牛津大学的研究人员开发出一种能从常规CT扫描中预测心力衰竭风险的AI工具，准确率达86%。AI正在从医疗的辅助者变成诊断的前线。",
+      "content": "<p>急诊室凌晨三点。一个病人被推进来，症状模糊——胸痛、呼吸困难、冷汗。是人类医生凭借经验和直觉做出第一判断，还是一个AI系统用157万份病例训练出的\"直觉\"来做分诊？</p><p>哈佛大学的一项新研究给出了一个让医疗界不安的答案：先进的AI模型（如OpenAI的o1）在急诊室分诊诊断中的表现，优于人类医生。</p><p>\"优于\"——不是\"接近\"，不是\"在某些方面有帮助\"。是\"更好\"。</p><h2>157万份病历的\"经验\"</h2><p>一个资深急诊医生一生大约处理10万例病例。o1模型在训练过程中吸收的病例数据是157万份。这是15个人类职业生涯的总和。</p><p>但这不仅仅是\"谁看得多\"的问题。AI模型不会疲劳。不会在连续工作12小时后出现认知偏差。不会因为上一个病人患的是感冒而下意识地低估当前病人的胸痛风险。不会有\"凌晨三点的判断失误\"。</p><p>不过哈佛研究的共同作者也指出：AI在罕见病患者、复杂合并症和\"非典型表现\"的患者上仍会出现系统性的误判——而这些恰恰是急诊室最危险的病人。</p><h2>心脏、CT、未来</h2><p>与此同时，牛津大学的研究人员开发出了一款AI工具，能从常规CT扫描中预测心力衰竭风险，准确率达86%。\"常规CT扫描\"——这意味着数百万人每年都会做的检查，现在可以同时成为一个心脏疾病的早期预警系统。</p><p>这个发现的真正威力不在于\"86%\"这个数字，而在于\"常规\"这个词。它不需要额外的设备，不需要额外的检查费用，不需要病人做额外的事情。AI只是多看了CT影像一眼——多看了一个人类放射科医生不会特别关注的东西。</p><h2>另一组数字</h2><p>美国CMS的医疗保险反欺诈中心报告：AI工具帮助实现了$14.6的投入回报比——每投入1美元，节省$14.6。2026年，这带来了263亿美元的反欺诈节省。</p><p>这个数字或许比任何AI基准测试成绩都更能说明问题。当AI能在不需要新设备、不需要更高收费的前提下创造出实在的经济价值时，大规模部署就只是时间问题。</p><h2>关键事实速览</h2><ul><li>哈佛研究发现OpenAI o1模型在急诊室分诊诊断中表现优于人类医生</li><li>AI基于157万份病例训练，远超人类医生一生的病例处理量</li><li>牛津大学AI工具从常规CT扫描预测心力衰竭风险，准确率86%</li><li>美国CMS用AI反欺诈实现$14.6:1的投入回报比，年度节省$263亿</li><li>研究同时指出AI在罕见病和非典型症状上仍存在系统性误判风险</li></ul>",
+      "tags": ["AI医疗", "深度学习", "OpenAI"],
+      "image": "https://images.unsplash.com/photo-1464802686167-b939a6910659?w=800&q=80",
+      "sources": [
+        {"name": "State of AI May 2026", "url": "https://press.airstreet.com/p/state-of-ai-may-2026", "title": "Harvard study: AI outperforms human physicians in ER triage"},
+        {"name": "SCAN UK AI Newsletter", "url": "https://www.scan.co.uk/info/presszone/ai-newsletter-may-2026", "title": "AI Newsletter May 2026"},
+        {"name": "The Verge AI Archive", "url": "https://www.theverge.com/archives/ai-artificial-intelligence/2026/5/1", "title": "AI Archive May 2026"}
+      ]
+    },
+    {
+      "id": "20260518-enterpriseagent",
+      "title": "沉默的接管：当53%的联邦机构开始部署AI代理人",
+      "date": "2026.05.18",
+      "summary": "一项调查显示，超过53%的美国联邦机构正在计划或已经试点部署AI代理人系统。Intel推出能降低70%云token消耗的SuperClaw。AI创业公司Hark以600亿美元估值完成70亿美元A轮融资。这股浪潮的信号，已经响亮到无法忽视。",
+      "content": "<p>最深刻的变革，往往发生在主流叙事没有聚焦的地方。</p><p>当全世界的目光都在注视着OpenAI vs Anthropic的估值之争时，一股更安静但更深远的力量正在改变AI产业的版图：企业级和政府级的AI代理人部署。</p><h2>53%：一个被忽视的数字</h2><p>由ServiceNow赞助的Market Connections调查显示，超过53%的美国联邦机构正在计划或已经试点部署AI代理人系统。这个数字的存在本身就令人惊讶——公众印象中缓慢、保守的政府机构，竟然在AI代理人采纳上走得如此之快。</p><p>但这份调查同时揭示了一个问题：治理框架远远落后于部署速度。换句话说，超过一半的联邦机构已经在用AI代理人处理真实的工作流程，但还没有一套完整的规则来规范\"AI代理人可以做什么、不能做什么\"。</p><p>飞机已经在飞行，而航空管制手册还没写完。</p><h2>Intel的\"70%\"</h2><p>Intel推出了SuperClaw——一款混合边缘-云端AI解决方案。它的核心卖点是：能降低云端token消耗最高达70%。对于中型企业来说，这意味着每月约2300美元的成本节省。</p><p>70%这个数字值得仔细思考。当前AI部署的成本结构中，推理（inference）占据了越来越大的比例。每一次ChatGPT问答、每一次Claude Code的代码生成、每一次AI代理人的自主决策，都在消耗云端GPU的计算时间。如果你能把70%的计算从云端转移到边缘设备——你的笔记本电脑、你的企业内部服务器——那么规模化的经济效益将从根本上改变。</p><h2>$70亿的\"还不存在\"</h2><p>AI创业公司Hark以600亿美元估值完成了70亿美元的A轮融资——来自NVIDIA、AMD、Intel Capital和Parkway Venture Capital。这是一家\"下一代AI硬件\"公司。它还没有公开任何产品，但已经是有史以来估值最高的A轮创业公司之一。</p><p>当三家芯片巨头同时投资一家AI硬件创业公司时，你需要理解他们看到的东西：未来的AI计算需求将超过当前全球半导体产能的总和。在这种预期下，70亿美元只是入场券。</p><h2>ServiceNow的双线扩张</h2><p>ServiceNow同时扩展了与NVIDIA（Project Arc自主桌面代理人）和Microsoft（Agent 365治理）的合作关系。自主桌面代理人——一个能够操作你的电脑、处理你的工作流程、填写你的表单的AI——正在从\"科幻\"变成\"企业功能\"。</p><h2>关键事实速览</h2><ul><li>53%+美国联邦机构正在计划/试点AI代理人部署，但治理框架严重滞后</li><li>Intel SuperClaw可降低云token消耗高达70%，中型企业月省约$2300</li><li>AI硬件创业公司Hark以$600亿估值完成$70亿A轮融资（NVIDIA、AMD、Intel参投）</li><li>ServiceNow同时与NVIDIA和Microsoft扩展AI代理人合作</li><li>AI/R推出企业AI支出管控平台AI/R Watch</li></ul>",
+      "tags": ["AI Agent", "企业AI", "AI芯片"],
+      "image": "https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=800&q=80",
+      "sources": [
+        {"name": "Business of Government", "url": "https://governmentwww.businessofgovernment.org/blog/weekly-roundup-may-4-8-2026", "title": "Weekly Roundup — 53% of federal agencies piloting AI agents"},
+        {"name": "State of AI May 2026", "url": "https://press.airstreet.com/p/state-of-ai-may-2026", "title": "Enterprise AI — ServiceNow, Intel SuperClaw, Hark"},
+        {"name": "GlobeNewswire", "url": "https://www.globenewswire.com/de/news-release/2026/05/22/3300293/0/en/ai-r-launches-platform-to-bring-visibility-to-artificial-intelligence-spending-across-organizations.html", "title": "AI/R Launches Platform for AI Spending Visibility"}
+      ]
+    }
+  ]
+}

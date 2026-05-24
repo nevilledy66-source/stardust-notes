@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">文章 — 星尘笔记</title>
+    <meta name="description" content="星尘笔记 — 经过交叉验证的 AI 前沿洞察" id="meta-desc">
+
+    <meta property="og:title" content="" id="og-title">
+    <meta property="og:description" content="" id="og-desc">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="" id="og-img">
+    <meta property="og:locale" content="zh_CN">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="" id="tw-title">
+    <meta name="twitter:description" content="" id="tw-desc">
+    <meta name="twitter:image" content="" id="tw-img">
+
+    <style>
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        :root{--bg:#0a0a0f;--card:rgba(20,20,40,0.55);--text:#e0e0e8;--muted:#9898b0;--accent:#a78bfa;--gold:#c9a96e;--border:rgba(255,255,255,0.06)}
+
+        body{font-family:"Noto Serif SC","SimSun",Georgia,serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.9;overflow-x:hidden}
+        #starfield{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0}
+
+        /* Reading progress bar */
+        #reading-progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--accent),#6366f1);z-index:200;transition:width .1s linear}
+        #reading-progress-text{position:fixed;top:12px;right:24px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:.68rem;color:var(--muted);z-index:200;letter-spacing:.06em;opacity:0;transition:opacity .3s}
+        #reading-progress-text.visible{opacity:1}
+
+        /* Nav */
+        .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 0;background:rgba(10,10,15,0.75);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+        .nav-inner{max-width:900px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+        .nav-logo{font-size:1.2rem;font-weight:700;letter-spacing:.05em;text-decoration:none;background:linear-gradient(135deg,var(--accent),#6366f1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .nav-back{color:var(--muted);text-decoration:none;font-size:.85rem;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;transition:color .3s}
+        .nav-back:hover{color:var(--accent)}
+
+        /* Hero */
+        .article-hero{position:relative;height:55vh;min-height:380px;display:flex;align-items:flex-end;overflow:hidden}
+        .article-hero-img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:.35;filter:brightness(.45) saturate(.4)}
+        .article-hero-overlay{position:absolute;bottom:0;left:0;right:0;height:60%;background:linear-gradient(to top,var(--bg) 0%,transparent 100%)}
+        .article-hero-content{position:relative;z-index:2;max-width:800px;margin:0 auto;padding:0 24px 48px;width:100%}
+        .article-hero-date{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:.75rem;letter-spacing:.12em;color:var(--gold);margin-bottom:12px;text-transform:uppercase}
+        .article-hero-title{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;line-height:1.3;color:#fff;margin-bottom:16px}
+        .article-hero-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+        .tag{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:.68rem;padding:3px 10px;border-radius:20px;background:rgba(167,139,250,0.12);color:var(--accent);border:1px solid rgba(167,139,250,0.2);letter-spacing:.04em}
+        .verification-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(74,222,128,0.06);border:1px solid rgba(74,222,128,0.2);border-radius:20px;padding:6px 16px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:.72rem;color:#4ade80;letter-spacing:.04em}
+
+        /* Article body */
+        .article-container{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:48px 24px 80px}
+        .article-body{font-size:1.08rem;line-height:2.1;color:#d0d0dc}
+        .article-body p{margin-bottom:28px}
+        .article-body h2{font-size:1.45rem;color:var(--text);margin:48px 0 20px;padding-left:18px;border-left:3px solid var(--accent);line-height:1.4}
+        .article-body h3{font-size:1.18rem;color:var(--text);margin:36px 0 14px}
+        .article-body blockquote{border-left:2px solid var(--gold);margin:28px 0;padding:20px 28px;background:rgba(201,169,110,0.04);border-radius:0 8px 8px 0;font-style:italic;color:var(--gold)}
+        .article-body ul,.article-body ol{margin:20px 0 28px 24px}
+        .article-body li{margin-bottom:10px;color:#c0c0d0}
+        .article-body strong{color:var(--text);font-weight:600}
+        .article-body a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+        .article-body figure{margin:36px 0}
+        .article-body figure img{width:100%;border-radius:10px;opacity:.85;border:1px solid var(--border)}
+        .article-body figure figcaption{text-align:center;font-size:.72rem;color:var(--muted);margin-top:8px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:.04em}
+
+        /* Divider */
+        .section-divider{width:60px;height:1px;background:var(--border);margin:0 auto 48px;border:none}
+
+        /* Sources */
+        .sources-box{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:32px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+        .sources-box h3{font-size:1rem;font-weight:600;margin-bottom:20px;color:var(--gold);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:.04em}
+        .source-row{display:flex;align-items:baseline;gap:12px;margin-bottom:12px;padding:10px 14px;border-radius:8px;background:rgba(255,255,255,0.02);transition:background .3s}
+        .source-row:hover{background:rgba(255,255,255,0.04)}
+        .source-badge{font-size:.68rem;letter-spacing:.05em;color:var(--muted);min-width:88px;flex-shrink:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;text-transform:uppercase}
+        .source-row a{color:var(--accent);text-decoration:none;font-size:.88rem;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;word-break:break-all}
+        .source-row a:hover{text-decoration:underline}
+
+        /* Share */
+        .share-bar{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:48px;padding-top:32px;border-top:1px solid var(--border);flex-wrap:wrap}
+        .share-label{font-size:.75rem;color:var(--muted);letter-spacing:.06em;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;margin-right:8px}
+        .share-btn{display:inline-block;padding:8px 18px;border-radius:20px;border:1px solid var(--border);background:var(--card);color:var(--muted);cursor:pointer;font-size:.78rem;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:.04em;transition:all .3s;text-decoration:none;backdrop-filter:blur(10px)}
+        .share-btn:hover{border-color:var(--accent);color:var(--accent)}
+
+        /* Back to top */
+        .back-top{position:fixed;bottom:32px;right:32px;width:42px;height:42px;border-radius:50%;background:var(--card);border:1px solid var(--border);color:var(--muted);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:150;font-size:1.2rem;transition:all .3s;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);opacity:0;transform:translateY(16px);pointer-events:none}
+        .back-top.visible{opacity:1;transform:translateY(0);pointer-events:auto}
+        .back-top:hover{border-color:var(--accent);color:var(--accent)}
+
+        /* Loading / Error */
+        .loading-state,.error-state{text-align:center;padding:150px 24px;color:var(--muted);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+        .error-state a{color:var(--accent);text-decoration:none}
+
+        /* Related articles */
+        .related-section{max-width:760px;margin:0 auto;padding:0 24px 80px;position:relative;z-index:1}
+        .related-title{font-size:1.1rem;font-weight:600;color:var(--text);margin-bottom:24px;letter-spacing:.03em}
+        .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+        .related-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:18px;text-decoration:none;color:inherit;transition:all .3s;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+        .related-card:hover{transform:translateY(-3px);border-color:rgba(167,139,250,0.25);box-shadow:0 12px 40px rgba(124,58,237,0.1)}
+        .related-card-date{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:.65rem;color:var(--muted);letter-spacing:.05em;margin-bottom:6px}
+        .related-card-title{font-size:.92rem;font-weight:600;color:var(--text);line-height:1.4}
+
+        .footer{text-align:center;padding:48px 0;color:var(--muted);font-size:.78rem;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:.04em;position:relative;z-index:1}
+        .footer a{color:var(--accent);text-decoration:none}
+
+        @media(max-width:640px){
+            .article-container{padding:32px 16px 60px}
+            .article-hero{height:40vh;min-height:280px}
+            .article-hero-title{font-size:1.5rem}
+            .article-body{font-size:.95rem}
+            .sources-box{padding:20px}
+            .related-grid{grid-template-columns:1fr}
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="starfield"></canvas>
+    <div id="reading-progress"></div>
+    <div id="reading-progress-text">0%</div>
+
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">✦ 星尘笔记</a>
+            <a href="index.html" class="nav-back">← 返回首页</a>
+        </div>
+    </nav>
+
+    <div id="app">
+        <div class="loading-state"><p>正在加载...</p></div>
+    </div>
+
+    <div class="related-section" id="related-section"></div>
+
+    <footer class="footer">
+        <p>&copy; 2026 星尘笔记 · 图片来源 <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a></p>
+    </footer>
+
+    <button class="back-top" id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="返回顶部">↑</button>
+
+    <script src="articles.js"></script>
+    <script>
+        (function(){
+            /* Starfield */
+            var c=document.getElementById('starfield'),x=c.getContext('2d'),s=[],w,h;
+            function rs(){w=c.width=window.innerWidth;h=c.height=window.innerHeight}
+            function cs(){s=[];for(var i=0,n=Math.floor(w*h/1500);i<n;i++)s.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.6+.3,t:Math.random()*Math.PI*2,v:Math.random()*.02+.005})}
+            function d(){x.clearRect(0,0,w,h);for(var i=0;i<s.length;i++){var o=s[i];o.t+=o.v;x.fillStyle='rgba(180,170,220,'+(.3+.7*Math.abs(Math.sin(o.t)))+')';x.beginPath();x.arc(o.x,o.y,o.r,0,Math.PI*2);x.fill()}requestAnimationFrame(d)}
+            window.addEventListener('resize',function(){rs();cs()});rs();cs();d()
+
+            /* Reading progress */
+            var bar=document.getElementById('reading-progress'),barTxt=document.getElementById('reading-progress-text'),backTop=document.getElementById('back-top');
+            window.addEventListener('scroll',function(){var st=window.scrollY,ch=document.documentElement.scrollHeight-window.innerHeight,pct=ch>0?Math.round(st/ch*100):0;bar.style.width=pct+'%';barTxt.textContent=pct+'%';if(st>400){barTxt.classList.add('visible');backTop.classList.add('visible')}else{barTxt.classList.remove('visible');backTop.classList.remove('visible')}})
+
+            /* Article loader */
+            var params=new URLSearchParams(window.location.search),articleId=params.get('id'),app=document.getElementById('app'),relSec=document.getElementById('related-section');
+            if(!articleId){app.innerHTML='<div class="error-state"><p>未指定文章 ID。</p><p style="margin-top:12px"><a href="index.html">← 返回首页</a></p></div>';return}
+
+            function setMeta(article){
+                document.title=article.title+' — 星尘笔记';
+                document.getElementById('page-title').textContent=article.title+' — 星尘笔记';
+                document.getElementById('meta-desc').setAttribute('content',article.summary);
+                document.getElementById('og-title').setAttribute('content',article.title);
+                document.getElementById('og-desc').setAttribute('content',article.summary);
+                document.getElementById('og-img').setAttribute('content',article.image);
+                document.getElementById('tw-title').setAttribute('content',article.title);
+                document.getElementById('tw-desc').setAttribute('content',article.summary);
+                document.getElementById('tw-img').setAttribute('content',article.image);
+                var ld=document.createElement('script');ld.type='application/ld+json';
+                ld.textContent=JSON.stringify({'@context':'https://schema.org','@type':'BlogPosting','headline':article.title,'description':article.summary,'image':article.image,'datePublished':article.date,'author':{'@type':'Person','name':'星尘'},'inLanguage':'zh-CN'});
+                document.head.appendChild(ld);
+            }
+
+            /* Themed inline images for article sections */
+            var themedImages={
+                'default':['https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=1200&q=80','https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80'],
+                'OpenAI':['https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80'],
+                'AI安全':['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&q=80'],
+                '网络安全':['https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=1200&q=80'],
+                'AI编程':['https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&q=80'],
+                'AI医疗':['https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&q=80'],
+                'AI监管':['https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&q=80'],
+                'AI Agent':['https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1200&q=80']
+            };
+
+            function pickBodyImages(tags){
+                var imgs=[];
+                for(var i=0;i<tags.length;i++){
+                    if(themedImages[tags[i]])imgs=imgs.concat(themedImages[tags[i]]);
+                }
+                if(imgs.length===0)imgs=themedImages['default'];
+                return imgs;
+            }
+
+            function injectImages(content,tags){
+                var imgs=pickBodyImages(tags),imgIdx=0;
+                /* Insert image after every 2nd </h2> */
+                var parts=content.split('</h2>'),result='',h2Count=0;
+                for(var i=0;i<parts.length;i++){
+                    result+=parts[i];
+                    if(i<parts.length-1){
+                        result+='</h2>';
+                        h2Count++;
+                        if(h2Count%2===0&&imgIdx<imgs.length){
+                            result+='<figure><img src="'+imgs[imgIdx]+'" alt="" loading="lazy" onerror="this.style.display=\'none\'"><figcaption>▲ 图片来源：Unsplash</figcaption></figure>';
+                            imgIdx++;
+                            imgIdx++;
+                        }
+                    }
+                }
+                /* If no h2 found, insert one image after first <p> */
+                if(h2Count===0&&imgs.length>0){
+                    result=result.replace('</p>','</p><figure><img src="'+imgs[0]+'" alt="" loading="lazy" onerror="this.style.display=\'none\'"><figcaption>▲ 图片来源：Unsplash</figcaption></figure>');
+                }
+                return result;
+            }
+
+            function renderArticle(article){
+                setMeta(article);
+                var tagsHtml='',sourcesHtml='',i;
+                if(article.tags)for(i=0;i<article.tags.length;i++)tagsHtml+='<span class="tag">'+article.tags[i]+'</span>';
+                if(article.sources&&article.sources.length>0)for(i=0;i<article.sources.length;i++)sourcesHtml+='<div class="source-row"><span class="source-badge">'+article.sources[i].name+'</span><a href="'+article.sources[i].url+'" target="_blank" rel="noopener noreferrer">'+(article.sources[i].title||article.sources[i].url)+'</a></div>';
+
+                var bodyContent=injectImages(article.content,article.tags||[]);
+
+                app.innerHTML=
+                    '<article>'+
+                    '<div class="article-hero">'+
+                    '<img class="article-hero-img" src="'+article.image+'" alt="" onerror="this.style.display=\'none\'">'+
+                    '<div class="article-hero-overlay"></div>'+
+                    '<div class="article-hero-content">'+
+                    '<p class="article-hero-date">'+article.date+'</p>'+
+                    '<h1 class="article-hero-title">'+article.title+'</h1>'+
+                    '<div class="article-hero-tags">'+tagsHtml+'</div>'+
+                    '<div class="verification-pill">✓✓ 交叉验证通过 · '+article.sources.length+' 个独立信源确认</div>'+
+                    '</div></div>'+
+                    '<div class="article-container">'+
+                    '<div class="article-body">'+bodyContent+'</div>'+
+                    '<hr class="section-divider">'+
+                    (sourcesHtml?'<div class="sources-box"><h3>▸ 信息来源（交叉验证）</h3>'+sourcesHtml+'</div>':'')+
+                    '<div class="share-bar">'+
+                    '<span class="share-label">分享</span>'+
+                    '<a class="share-btn" href="https://twitter.com/intent/tweet?text='+encodeURIComponent(article.title)+'&url='+encodeURIComponent(location.href)+'" target="_blank" rel="noopener">Twitter</a>'+
+                    '<button class="share-btn" onclick="var t=this;navigator.clipboard.writeText(location.href);t.textContent=\'已复制!\';setTimeout(function(){t.textContent=\'复制链接\'},2000)">复制链接</button>'+
+                    '</div></div>'+
+                    '</article>';
+            }
+
+            function renderRelated(articles,currentId){
+                var others=[];for(var i=0;i<articles.length;i++){if(articles[i].id!==currentId)others.push(articles[i])}
+                if(others.length===0)return;
+                var html='<h3 class="related-title">更多文章</h3><div class="related-grid">';
+                for(var i=0;i<Math.min(others.length,3);i++){var a=others[i];html+='<a class="related-card" href="article.html?id='+a.id+'"><p class="related-card-date">'+a.date+'</p><p class="related-card-title">'+a.title+'</p></a>'}
+                html+='</div>';relSec.innerHTML=html;
+            }
+
+            function tryEmbedded(){
+                if(typeof __STARDUST_ARTICLES__!=='undefined'&&__STARDUST_ARTICLES__.length>0){
+                    for(var i=0;i<__STARDUST_ARTICLES__.length;i++){if(String(__STARDUST_ARTICLES__[i].id)===articleId){renderArticle(__STARDUST_ARTICLES__[i]);renderRelated(__STARDUST_ARTICLES__,articleId);return true}}
+                    app.innerHTML='<div class="error-state"><p>文章未找到。</p><p style="margin-top:12px"><a href="index.html">← 返回首页</a></p></div>';
+                    return true
+                }return false
+            }
+
+            if(!tryEmbedded()){
+                fetch('articles.json').then(function(r){if(!r.ok)throw Error();return r.json()}).then(function(d){var arts=d.articles||d,found=null;for(var i=0;i<arts.length;i++){if(String(arts[i].id)===articleId){found=arts[i];break}}if(found){renderArticle(found);renderRelated(arts,articleId)}else{app.innerHTML='<div class="error-state"><p>文章未找到。</p><p style="margin-top:12px"><a href="index.html">← 返回首页</a></p></div>'}}).catch(function(){app.innerHTML='<div class="error-state"><p>文章加载失败。</p><p style="margin-top:12px"><a href="index.html">← 返回首页</a></p></div>'})
+            }
+        })();
+    </script>
+
+</body>
+</html>

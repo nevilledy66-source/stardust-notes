@@ -1,0 +1,61 @@
+# Trusted AI news sources for cross-verification
+# At least 2 independent sources must report a story for it to be included
+
+sources:
+  - name: "TechCrunch AI"
+    url: "https://techcrunch.com/category/artificial-intelligence/feed/"
+    weight: 3  # higher weight = more authoritative
+
+  - name: "MIT Technology Review AI"
+    url: "https://www.technologyreview.com/feed/"
+    weight: 3
+
+  - name: "Ars Technica AI"
+    url: "https://feeds.arstechnica.com/arstechnica/ai"
+    weight: 3
+
+  - name: "The Verge AI"
+    url: "https://www.theverge.com/ai-artificial-intelligence/rss/index.xml"
+    weight: 2
+
+  - name: "VentureBeat AI"
+    url: "https://feeds.feedburner.com/venturebeat/SZYF"
+    weight: 2
+
+  - name: "Hacker News"
+    url: "https://hnrss.org/frontpage"
+    weight: 1  # community-driven, lower weight
+
+  - name: "ZDNet AI"
+    url: "https://www.zdnet.com/topic/artificial-intelligence/rss.xml"
+    weight: 2
+
+# Minimum number of independent sources required to accept a story
+min_sources: 2
+
+# Keywords to filter for relevance (article must match at least one)
+keywords:
+  - "AI"
+  - "artificial intelligence"
+  - "machine learning"
+  - "LLM"
+  - "GPT"
+  - "Claude"
+  - "Gemini"
+  - "OpenAI"
+  - "DeepMind"
+  - "neural network"
+  - "transformer"
+  - "AGI"
+  - "deep learning"
+  - "language model"
+  - "Anthropic"
+  - "Copilot"
+  - "foundation model"
+
+# Output configuration
+output:
+  max_articles_per_run: 2  # generate 1-2 articles per daily run
+  language: "zh-CN"
+  min_word_count: 500
+  max_word_count: 1200

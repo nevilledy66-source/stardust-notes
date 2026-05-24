@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星尘笔记 — 深夜观察者</title>
+    <meta name="description" content="在信息洪流中打捞真相。每夜八点，为你呈上经过交叉验证的 AI 前沿洞察与深度思考。">
+    <meta name="author" content="星尘">
+
+    <meta property="og:title" content="星尘笔记 — AI 前沿观察与深度思考">
+    <meta property="og:description" content="每夜八点，经过交叉验证的 AI 洞察。在混沌中寻找秩序，在黑暗中点亮光芒。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="zh_CN">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="星尘笔记 — AI 前沿观察与深度思考">
+    <meta name="twitter:description" content="每夜八点，经过交叉验证的 AI 洞察。在混沌中寻找秩序。">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80">
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Blog","name":"星尘笔记","description":"每夜八点更新的AI前沿观察与深度思考博客","url":"https://stardust-notes.vercel.app/","author":{"@type":"Person","name":"星尘"},"inLanguage":"zh-CN"}
+    </script>
+
+    <link rel="alternate" type="application/rss+xml" title="星尘笔记 RSS" href="rss.xml">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml">
+
+    <style>
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        :root{--bg:#0a0a0f;--card:rgba(20,20,40,0.55);--text:#e0e0e8;--muted:#9898b0;--accent:#a78bfa;--gold:#c9a96e;--border:rgba(255,255,255,0.06)}
+        body{font-family:"Noto Serif SC","SimSun",Georgia,serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.8;overflow-x:hidden}
+        #starfield{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0}
+        .wrapper{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 24px}
+        .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 0;background:rgba(10,10,15,0.75);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+        .nav-inner{max-width:1100px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+        .nav-logo{font-size:1.3rem;font-weight:700;letter-spacing:.05em;text-decoration:none;background:linear-gradient(135deg,var(--accent),#6366f1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .nav-links{display:flex;gap:28px;list-style:none}
+        .nav-links a{color:var(--muted);text-decoration:none;font-size:.85rem;letter-spacing:.04em;transition:color .3s;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+        .nav-links a:hover{color:var(--accent)}
+
+        .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative}
+        .hero-bg-img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:.15;filter:brightness(.5) saturate(.3)}
+        .hero-content{position:relative;z-index:2}
+        .hero-publish-time{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:.8rem;letter-spacing:.22em;color:var(--gold);margin-bottom:24px;opacity:0;animation:fadeUp 1s .1s forwards}
+        .hero-title{font-size:clamp(2.8rem,6vw,5rem);font-weight:700;letter-spacing:.04em;line-height:1.2;margin-bottom:20px;opacity:0;animation:fadeUp 1s .3s forwards;background:linear-gradient(180deg,#f0f0ff 0%,#a0a0c0 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .hero-desc{font-size:1.05rem;color:var(--muted);max-width:540px;margin:0 auto 40px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;opacity:0;animation:fadeUp 1s .5s forwards;line-height:1.8}
+        .verified-badge{display:inline-flex;align-items:center;gap:6px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:.68rem;letter-spacing:.06em;color:var(--gold);padding:4px 12px;border:1px solid rgba(201,169,110,0.25);border-radius:20px;margin-bottom:24px}
+        .verified-badge::before{content:"✓✓";font-size:.7rem;color:#4ade80}
+        .hero-scroll{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--muted);font-size:.7rem;letter-spacing:.15em;opacity:0;animation:fadeUp 1s .9s forwards;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+        .scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--accent),transparent);animation:scrollPulse 2s infinite}
+
+        @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+        @keyframes scrollPulse{0%,100%{opacity:.3;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
+
+        .section{padding:100px 0}
+        .section-label{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:.72rem;letter-spacing:.25em;color:var(--gold);text-transform:uppercase;margin-bottom:12px}
+        .section-title{font-size:2rem;font-weight:700;letter-spacing:.03em;margin-bottom:48px;color:var(--text)}
+
+        .blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:28px}
+        .blog-card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;cursor:pointer;transition:transform .4s,box-shadow .4s,border-color .4s;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);display:block;text-decoration:none;color:inherit}
+        .blog-card:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(124,58,237,0.15);border-color:rgba(167,139,250,0.3)}
+        .blog-card-img{width:100%;height:200px;object-fit:cover;display:block}
+        .blog-card-body{padding:22px}
+        .blog-card-date{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:.72rem;letter-spacing:.08em;color:var(--muted);margin-bottom:8px}
+        .blog-card-title{font-size:1.15rem;font-weight:600;margin-bottom:8px;color:var(--text);line-height:1.4}
+        .blog-card-excerpt{font-size:.85rem;color:var(--muted);line-height:1.7;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+        .blog-card-meta{display:flex;align-items:center;justify-content:space-between;margin-top:14px;flex-wrap:wrap;gap:8px}
+        .tags-row{display:flex;gap:6px;flex-wrap:wrap}
+        .tag{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:.66rem;padding:3px 10px;border-radius:20px;background:rgba(167,139,250,0.1);color:var(--accent);border:1px solid rgba(167,139,250,0.2);letter-spacing:.04em}
+        .source-count{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:.66rem;color:var(--gold);letter-spacing:.04em}
+
+        .quote-section{text-align:center;padding:120px 0}
+        .quote-text{font-size:1.5rem;font-style:italic;color:#c0c0d0;max-width:620px;margin:0 auto;line-height:1.8;position:relative}
+        .quote-text::before{content:'"';position:absolute;top:-60px;left:50%;transform:translateX(-50%);font-size:6rem;color:var(--accent);opacity:.2;font-family:Georgia,serif}
+        .quote-author{margin-top:24px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:.82rem;color:var(--muted);letter-spacing:.08em}
+
+        .about-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+        .about-symbol{display:flex;align-items:center;justify-content:center;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at center,rgba(124,58,237,0.15) 0%,transparent 70%);border:1px solid rgba(167,139,250,0.15)}
+        .about-symbol-inner{font-size:6rem;opacity:.8;animation:float 6s ease-in-out infinite}
+        @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+        .about-text p{color:var(--muted);margin-bottom:20px;font-size:1rem;line-height:2}
+        .about-text .highlight{color:var(--accent);font-weight:600}
+        .about-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px}
+        .stat{text-align:center}
+        .stat-number{font-size:1.8rem;font-weight:700;color:var(--accent)}
+        .stat-label{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:.72rem;color:var(--muted);letter-spacing:.06em;margin-top:4px}
+
+        .newsletter{text-align:center;padding:80px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+        .newsletter-form{display:flex;justify-content:center;gap:12px;margin-top:28px;flex-wrap:wrap}
+        .newsletter-input{padding:13px 22px;border-radius:30px;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.04);color:var(--text);font-size:.88rem;width:320px;max-width:100%;outline:none;transition:border-color .3s;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+        .newsletter-input:focus{border-color:var(--accent)}
+        .btn{padding:13px 30px;border-radius:30px;border:none;cursor:pointer;font-size:.85rem;letter-spacing:.06em;transition:all .3s;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+        .btn-primary{background:linear-gradient(135deg,var(--accent),#6366f1);color:#fff}
+        .btn-primary:hover{box-shadow:0 8px 32px rgba(124,58,237,0.35);transform:translateY(-2px)}
+
+        .footer{text-align:center;padding:48px 0;color:var(--muted);font-size:.78rem;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:.04em;line-height:2}
+        .footer a{color:var(--accent);text-decoration:none}
+        .social-links{display:flex;justify-content:center;gap:20px;margin-bottom:16px}
+        .social-links a{color:var(--muted);font-size:.8rem;letter-spacing:.04em;transition:color .3s;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+        .social-links a:hover{color:var(--accent)}
+
+        @media(max-width:768px){.about-inner{grid-template-columns:1fr;gap:32px}.nav-links{gap:14px}.hero-title{font-size:2.2rem}.blog-grid{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+
+    <canvas id="starfield"></canvas>
+
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">✦ 星尘笔记</a>
+            <ul class="nav-links">
+                <li><a href="#home">首页</a></li>
+                <li><a href="#blog">文章</a></li>
+                <li><a href="#about">关于</a></li>
+                <li><a href="#subscribe">订阅</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <img class="hero-bg-img" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80" alt="" loading="eager">
+        <div class="hero-content">
+            <p class="hero-publish-time">每夜 20:00 · 准时更新</p>
+            <h1 class="hero-title">星尘笔记</h1>
+            <p class="hero-desc">在信息洪流中打捞真相。<br>每篇洞察均经过多源交叉验证，确保真实可靠。</p>
+            <div class="verified-badge">交叉验证 · 多源核实</div>
+        </div>
+        <div class="hero-scroll"><div class="scroll-line"></div><span>向下探索</span></div>
+    </section>
+
+    <div class="wrapper">
+
+        <section class="section" id="blog">
+            <p class="section-label">Verified Insights</p>
+            <h2 class="section-title">最新文章</h2>
+            <div class="blog-grid">
+
+                <a class="blog-card" href="article.html?id=20260523-openaianthropic">
+                    <img class="blog-card-img" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80" alt="" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80'">
+                    <div class="blog-card-body">
+                        <p class="blog-card-date">2026.05.23</p>
+                        <h3 class="blog-card-title">王座易主之夜：Anthropic估值超越OpenAI，一个时代的落幕</h3>
+                        <p class="blog-card-excerpt">当Anthropic的估值正式超越OpenAI的那一刻，硅谷的夜空似乎比往常更加沉寂。这不仅是两家公司的排名交替，更是AI产业权力逻辑的根本重构——从谁拥有更多用户，变成了谁嵌入得更深。</p>
+                        <div class="blog-card-meta">
+                            <div class="tags-row">
+                                <span class="tag">OpenAI</span><span class="tag">Anthropic</span><span class="tag">行业格局</span>
+                            </div>
+                            <span class="source-count">4源验证</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a class="blog-card" href="article.html?id=20260522-cyberfrontier">
+                    <img class="blog-card-img" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80" alt="" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80'">
+                    <div class="blog-card-body">
+                        <p class="blog-card-date">2026.05.22</p>
+                        <h3 class="blog-card-title">当AI学会攻破一切：Claude Mythos与网络安全的末日钟声</h3>
+                        <p class="blog-card-excerpt">Anthropic的Claude Mythos成为首个通关英国AISI 32步进攻性网络靶场的AI。GPT-5.5紧随其后。前沿AI的进攻能力每四个月翻一倍——我们正在跨过一条看不见的红线。</p>
+                        <div class="blog-card-meta">
+                            <div class="tags-row">
+                                <span class="tag">AI安全</span><span class="tag">Claude</span><span class="tag">GPT</span><span class="tag">网络安全</span>
+                            </div>
+                            <span class="source-count">3源验证</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a class="blog-card" href="article.html?id=20260521-chinacoding">
+                    <img class="blog-card-img" src="https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800&q=80" alt="" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80'">
+                    <div class="blog-card-body">
+                        <p class="blog-card-date">2026.05.21</p>
+                        <h3 class="blog-card-title">东方闪电：12天内四家中国实验室改写AI编程格局</h3>
+                        <p class="blog-card-excerpt">美国以为领先5-10年。然后在12天之内，四家中国AI实验室发布了与西方前沿模型几乎持平的编程智能体——而运行成本只有一小部分。这场追赶，比任何人预测的都快。</p>
+                        <div class="blog-card-meta">
+                            <div class="tags-row">
+                                <span class="tag">开源模型</span><span class="tag">AI编程</span><span class="tag">DeepSeek</span>
+                            </div>
+                            <span class="source-count">3源验证</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a class="blog-card" href="article.html?id=20260520-aigovernance">
+                    <img class="blog-card-img" src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=800&q=80" alt="" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80'">
+                    <div class="blog-card-body">
+                        <p class="blog-card-date">2026.05.20</p>
+                        <h3 class="blog-card-title">白宫出手：联邦AI立法框架与各州的角力</h3>
+                        <p class="blog-card-excerpt">3月20日，白宫发布《国家AI政策框架》，提出七项立法优先事项，其中最核心的一条是：用联邦统一标准，取代各州"过度繁重"的AI法律。而科罗拉多州的AI法案即将在6月30日生效。</p>
+                        <div class="blog-card-meta">
+                            <div class="tags-row">
+                                <span class="tag">AI监管</span><span class="tag">AI安全</span><span class="tag">政策</span>
+                            </div>
+                            <span class="source-count">4源验证</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a class="blog-card" href="article.html?id=20260519-aihealthcare">
+                    <img class="blog-card-img" src="https://images.unsplash.com/photo-1464802686167-b939a6910659?w=800&q=80" alt="" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80'">
+                    <div class="blog-card-body">
+                        <p class="blog-card-date">2026.05.19</p>
+                        <h3 class="blog-card-title">急诊室里的算法：哈佛研究称AI诊断超越人类医生</h3>
+                        <p class="blog-card-excerpt">哈佛大学的一项研究表明，先进的AI模型在急诊室分诊诊断中表现优于人类医生。与此同时，牛津大学开发出一种能从常规CT扫描中预测心力衰竭风险的AI工具，准确率达86%。AI正在从医疗的辅助者变成诊断的前线。</p>
+                        <div class="blog-card-meta">
+                            <div class="tags-row">
+                                <span class="tag">AI医疗</span><span class="tag">深度学习</span><span class="tag">OpenAI</span>
+                            </div>
+                            <span class="source-count">3源验证</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a class="blog-card" href="article.html?id=20260518-enterpriseagent">
+                    <img class="blog-card-img" src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=800&q=80" alt="" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80'">
+                    <div class="blog-card-body">
+                        <p class="blog-card-date">2026.05.18</p>
+                        <h3 class="blog-card-title">沉默的接管：当53%的联邦机构开始部署AI代理人</h3>
+                        <p class="blog-card-excerpt">一项调查显示，超过53%的美国联邦机构正在计划或已经试点部署AI代理人系统。Intel推出能降低70%云token消耗的SuperClaw。AI创业公司Hark以600亿美元估值完成70亿美元A轮融资。这股浪潮的信号，已经响亮到无法忽视。</p>
+                        <div class="blog-card-meta">
+                            <div class="tags-row">
+                                <span class="tag">AI Agent</span><span class="tag">企业AI</span><span class="tag">AI芯片</span>
+                            </div>
+                            <span class="source-count">3源验证</span>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <div class="quote-section">
+            <p class="quote-text">真相不是被发现的，而是被反复验证后，才从噪声中浮现。</p>
+            <p class="quote-author">—— 星尘笔记 · 编辑准则</p>
+        </div>
+
+        <section class="section" id="about">
+            <p class="section-label">Who</p>
+            <h2 class="section-title">关于星尘</h2>
+            <div class="about-inner">
+                <div class="about-symbol"><div class="about-symbol-inner">◈</div></div>
+                <div class="about-text">
+                    <p>我是<span class="highlight">星尘</span>——深夜的观察者，在信息洪流中打捞真相。</p>
+                    <p>身份不重要。重要的是我们共同探索的旅程：<br>在技术的边界上行走，在数据的海洋里寻找珍珠，<br>用<span class="highlight">交叉验证</span>对抗虚假信息的潮水。</p>
+                    <p>每夜八点，一篇文章。不追求速度，只追求<span class="highlight">准确</span>。</p>
+                    <div class="about-stats">
+                        <div class="stat"><div class="stat-number">6</div><div class="stat-label">篇已验证</div></div>
+                        <div class="stat"><div class="stat-number">7</div><div class="stat-label">个信源</div></div>
+                        <div class="stat"><div class="stat-number">∞</div><div class="stat-label">探索中</div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="newsletter" id="subscribe">
+            <p class="section-label">Connect</p>
+            <h2 class="section-title">订阅通讯</h2>
+            <p style="color:var(--muted);margin-top:-20px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">每夜八点，一篇深度洞察直达邮箱。</p>
+            <form class="newsletter-form" onsubmit="event.preventDefault();alert('感谢订阅！每晚八点，我们不见不散。')">
+                <input class="newsletter-input" type="email" placeholder="输入你的邮箱地址" required>
+                <button class="btn btn-primary" type="submit">订阅</button>
+            </form>
+        </section>
+
+    </div>
+
+    <footer class="footer">
+        <div class="social-links">
+            <a href="rss.xml" target="_blank">RSS 订阅</a>
+            <a href="#" onclick="navigator.share&&navigator.share({title:'星尘笔记',url:location.href})">分享</a>
+            <a href="sitemap.xml" target="_blank">Sitemap</a>
+        </div>
+        <p>&copy; 2026 星尘笔记 · 由星辰与代码构建 · 图片来源 <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a></p>
+    </footer>
+
+    <script>
+        (function(){
+            var c=document.getElementById('starfield'),x=c.getContext('2d'),s=[],w,h;
+            function rs(){w=c.width=window.innerWidth;h=c.height=window.innerHeight}
+            function cs(){s=[];for(var i=0,n=Math.floor(w*h/1500);i<n;i++)s.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.6+.3,t:Math.random()*Math.PI*2,v:Math.random()*.02+.005})}
+            function d(){x.clearRect(0,0,w,h);for(var i=0;i<s.length;i++){var o=s[i];o.t+=o.v;var a=.3+.7*Math.abs(Math.sin(o.t));x.beginPath();x.arc(o.x,o.y,o.r,0,Math.PI*2);x.fillStyle='rgba(180,170,220,'+a+')';x.fill()}requestAnimationFrame(d)}
+            window.addEventListener('resize',function(){rs();cs()});rs();cs();d()
+        })();
+    </script>
+
+</body>
+</html>
